@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Check local links, required copy, and GitHub Pages files."""
 
+import re
 import sys
 from html.parser import HTMLParser
 from pathlib import Path
@@ -26,8 +27,10 @@ class Parser(HTMLParser):
                 self.urls.append(found["src"])
             if "alt" not in found:
                 self.missing_alt += 1
-        if tag == "script" and "src" in found:
+        if tag in ("script", "source") and "src" in found:
             self.urls.append(found["src"])
+        if tag == "video" and "poster" in found:
+            self.urls.append(found["poster"])
         if tag == "link" and "href" in found:
             rel = found.get("rel", "")
             if "stylesheet" in rel or "icon" in rel:
@@ -73,6 +76,12 @@ def main():
                 continue
             if not (html.parent / rel).resolve().exists():
                 errors.append(f"{html.name}: missing {url}")
+
+    for css in sorted(ROOT.glob("css/*.css")):
+        for url in re.findall(r"url\([\"']?([^\"')]+)", css.read_text(encoding="utf-8")):
+            rel = local_target(url)
+            if rel and not (css.parent / rel).resolve().exists():
+                errors.append(f"{css.name}: missing {url}")
 
     cname = (ROOT / "CNAME").read_text(encoding="utf-8").strip()
     if cname != "valuxgames.com":

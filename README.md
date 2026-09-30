@@ -19,11 +19,11 @@ Public addresses on the site:
 From this folder:
 
 ```sh
-python3 -m http.server 4173 --bind 127.0.0.1
+python3 -m http.server 4181 --bind 127.0.0.1
 python3 scripts/validate.py
 ```
 
-Open http://127.0.0.1:4173.
+Open http://127.0.0.1:4181.
 
 ## GitHub Pages
 
@@ -68,6 +68,29 @@ Keep the existing email-forwarding MX records and the SPF TXT. Replace the parki
 
 Reference: [GitHub’s custom-domain instructions](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site).
 
+## Design
+
+Dark studio shell with a violet-to-pink accent, then each game takes over its own section in its own palette: Mecca Gecko in candy purple, pink, cyan and lime; Civic Watch in navy and gold. Type is Archivo (variable width and weight; headings use the 125% width at 900) with JetBrains Mono for small HUD-style labels. Both are self-hosted and SIL Open Font License; the license texts are in `assets/fonts/`.
+
+`js/site.js` handles the mobile menu, the header background on scroll, scroll reveals, the character marquee pause button, the arena Deathmatch/Zombies toggle, and the two muted video loops. Videos play only while on screen and never start on their own when the visitor prefers reduced motion. The site works without JavaScript.
+
 ## Assets
 
-Showcase images are copies of art already published on the Civic Watch and Mecca Gecko sites. Loading-screen illustrations are captioned separately from in-game images. Fonts are Instrument Serif and Instrument Sans, both SIL Open Font License; the license texts are in `assets/fonts/`.
+All images are WebP delivery copies. Originals stay in the game repos.
+
+| Path | Source |
+|---|---|
+| `assets/mecca/key.webp`, `art-*.webp` | Mecca Gecko loading-screen art, `mecca-gecko/assets/ui/loading/load_*.jpg` (labeled as loading-screen art on the page) |
+| `assets/mecca/logo.webp`, `icon.webp` | `mecca-gecko/website/store/out/headers/wordmark_logo.png`, `store/out/icon/app_icon_1024.png` |
+| `assets/mecca/chars/` | Character cards from the Mecca Gecko site (promotional art, captioned as such) |
+| `assets/mecca/mode-*.webp`, `map-*.webp` | Mode art and in-game map renders from the Mecca Gecko site |
+| `assets/mecca/gecko-dance.mp4` | `mecca-gecko/assets/video/gecko_dancing.ogv`, re-encoded H.264, muted |
+| `assets/civic/key.webp` | Civic Watch loading art, `golden-eye/assets/ui/loading/18_comedy_diner.jpg` |
+| `assets/civic/icon.webp` | `golden-eye/assets/ui/brand/app_icon_1024_store.png` |
+| `assets/civic/cast/`, `arenas/` | Portraits and in-game arena plates (day and Zombies) from the Civic Watch site |
+| `assets/civic/reel.mp4` | Operative intro clips from `golden-eye/assets/ui/character_videos/` (Pearl, Pepe, Rico, Libby, Pierre, Floyd), cut into one muted loop |
+| `assets/og.jpg`, `icon.png`, `apple-touch-icon.png`, `favicon.svg`, `assets/icon-512.png` | Studio mark and share card, generated for this site |
+
+Game facts on the homepage (character, map, arena and weapon counts, modes, ratings, store status) follow each game's own website. Update both when a game changes. Android is shown as "coming soon" for both games; replace it with a Google Play link only when a game is live on Google Play.
+
+Cache-version `css/site.css` and `js/site.js` (`?v=YYYYMMDD`) when either changes.

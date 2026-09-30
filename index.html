@@ -2,25 +2,27 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#0c0b09">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#08080c">
   <meta name="color-scheme" content="dark">
-  <title>Valux Games — Independent game studio</title>
-  <meta name="description" content="Valux Games LLC is an independent game studio in Raleigh, North Carolina. We make Civic Watch and Mecca Gecko.">
+  <title>Valux Games — Independent mobile game studio</title>
+  <meta name="description" content="Valux Games LLC is an independent mobile game studio in Raleigh, North Carolina. Mecca Gecko is out now on the App Store, Civic Watch is in beta, and Android versions are on the way.">
   <link rel="canonical" href="https://valuxgames.com/">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="icon" href="icon.png" type="image/png" sizes="32x32">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <link rel="preload" href="assets/fonts/instrument-serif-400.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="assets/fonts/instrument-serif-400-italic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="assets/images/civic-hero.webp" as="image">
-  <link rel="stylesheet" href="css/site.css">
+  <link rel="preload" href="assets/fonts/archivo-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/mecca/key.webp" as="image">
+  <link rel="preload" href="assets/civic/key.webp" as="image">
+  <link rel="stylesheet" href="css/site.css?v=20260930">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Valux Games">
-  <meta property="og:title" content="Valux Games — Independent game studio">
-  <meta property="og:description" content="Valux Games LLC is an independent game studio in Raleigh, North Carolina. We make Civic Watch and Mecca Gecko.">
+  <meta property="og:title" content="Valux Games — Small studio. Loud games.">
+  <meta property="og:description" content="The studio behind Mecca Gecko and Civic Watch. Independent, based in Raleigh, North Carolina.">
   <meta property="og:url" content="https://valuxgames.com/">
-  <meta property="og:image" content="https://valuxgames.com/assets/og.png">
+  <meta property="og:image" content="https://valuxgames.com/assets/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <script type="application/ld+json">
   {
@@ -32,7 +34,7 @@
         "name": "Valux Games LLC",
         "alternateName": "Valux Games",
         "url": "https://valuxgames.com/",
-        "logo": "https://valuxgames.com/apple-touch-icon.png",
+        "logo": "https://valuxgames.com/assets/icon-512.png",
         "foundingDate": "2026",
         "telephone": "+1-919-371-8096",
         "email": "support@valuxgames.com",
@@ -61,18 +63,23 @@
       },
       {
         "@type": "VideoGame",
-        "name": "Civic Watch",
-        "url": "https://civicwatchgame.com/",
-        "author": { "@id": "https://valuxgames.com/#studio" },
-        "gamePlatform": ["Web Browser", "iOS"]
-      },
-      {
-        "@type": "VideoGame",
         "name": "Mecca Gecko",
         "url": "https://www.meccagecko.com/",
         "sameAs": "https://apps.apple.com/us/app/mecca-gecko/id6801449754",
+        "image": "https://valuxgames.com/assets/mecca/key.webp",
         "author": { "@id": "https://valuxgames.com/#studio" },
-        "gamePlatform": "iOS"
+        "publisher": { "@id": "https://valuxgames.com/#studio" },
+        "gamePlatform": "iOS",
+        "contentRating": "9+"
+      },
+      {
+        "@type": "VideoGame",
+        "name": "Civic Watch",
+        "url": "https://civicwatchgame.com/",
+        "image": "https://valuxgames.com/assets/civic/key.webp",
+        "author": { "@id": "https://valuxgames.com/#studio" },
+        "publisher": { "@id": "https://valuxgames.com/#studio" },
+        "gamePlatform": ["Web Browser", "iOS"]
       }
     ]
   }
@@ -80,194 +87,609 @@
   <script>document.documentElement.classList.add("js")</script>
 </head>
 <body>
+  <svg class="icon-sprite" aria-hidden="true" focusable="false">
+    <defs>
+      <linearGradient id="vx-grad" x1="0" y1="0" x2="1" y2=".45">
+        <stop offset="0" stop-color="#8b6cff"/>
+        <stop offset="1" stop-color="#ff4fa3"/>
+      </linearGradient>
+    </defs>
+    <symbol id="i-valux" viewBox="0 0 64 64">
+      <path d="M4 10h15l13 30 13-30h15L39 56H25z" fill="url(#vx-grad)"/>
+      <path d="M32 12l5 5-5 5-5-5z" fill="#fff"/>
+    </symbol>
+    <symbol id="i-civic" viewBox="0 0 64 64">
+      <circle cx="32" cy="32" r="29.5" fill="#0b141c" stroke="#e2bd6f" stroke-width="3"/>
+      <circle cx="32" cy="32" r="21" fill="#2b2311" stroke="#e2bd6f" stroke-width="1.6"/>
+      <circle cx="32" cy="32" r="13" fill="#e2bd6f"/>
+      <circle cx="32" cy="33" r="6.5" fill="#05080b"/>
+      <ellipse cx="33.5" cy="26" rx="3.2" ry="2.1" fill="#f6e7c1"/>
+    </symbol>
+    <symbol id="i-apple" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/>
+    </symbol>
+    <symbol id="i-android" viewBox="0 0 24 24">
+      <path d="M7.9 10.6 6.2 7.7M16.1 10.6l1.7-2.9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      <path fill="currentColor" fill-rule="evenodd" d="M2.5 18.5a9.5 9.5 0 0 1 19 0zM8.4 13.2a1.1 1.1 0 1 0 0 2.2 1.1 1.1 0 0 0 0-2.2zm7.2 0a1.1 1.1 0 1 0 0 2.2 1.1 1.1 0 0 0 0-2.2z"/>
+    </symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24">
+      <g fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.6 3.8 5.6 3.8 9s-1.2 6.4-3.8 9c-2.6-2.6-3.8-5.6-3.8-9S9.4 5.6 12 3z"/></g>
+    </symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24">
+      <path d="M7 17 17 7M8.5 7H17v8.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="i-play" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M7 4.5v15l12.5-7.5z"/>
+    </symbol>
+  </svg>
+
   <a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-header">
+
+  <header class="site-header" data-header>
     <div class="wrap header-inner">
-      <a class="wordmark" href="./" aria-label="Valux Games home">
-        <svg class="mark" viewBox="0 0 64 64" aria-hidden="true">
-          <path d="M8 6 L32 50 L56 6" fill="none" stroke="currentColor" stroke-width="6" stroke-linejoin="miter"/>
-          <circle cx="32" cy="58" r="4" fill="#e2a33a"/>
-        </svg>
-        <span>Valux <em>Games</em></span>
+      <a class="brand" href="./" aria-label="Valux Games home">
+        <svg class="brand-mark" aria-hidden="true"><use href="#i-valux"/></svg>
+        <span class="brand-word">Valux <span>Games</span></span>
       </a>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="nav-toggle-bars" aria-hidden="true"></span>
+        <span class="nav-toggle-label">Menu</span>
+      </button>
       <nav id="site-nav" class="site-nav" aria-label="Primary">
-        <a href="#games">Games</a>
+        <a href="#mecca-gecko">Mecca Gecko</a>
+        <a href="#civic-watch">Civic Watch</a>
+        <a href="#platforms">Platforms</a>
         <a href="#studio">Studio</a>
-        <a href="#contact">Contact</a>
+        <a class="nav-cta" href="https://apps.apple.com/us/app/mecca-gecko/id6801449754"><svg aria-hidden="true"><use href="#i-apple"/></svg>Get Mecca Gecko</a>
       </nav>
     </div>
   </header>
 
   <main id="main">
     <section class="hero" aria-labelledby="hero-title">
-      <div class="wrap hero-grid">
-        <div class="hero-copy">
-          <p class="eyebrow">Raleigh, North Carolina · 2026</p>
-          <h1 id="hero-title">Games with a<br><em>point of view.</em></h1>
-          <p class="lede">Valux Games LLC is an independent studio. We make Civic Watch and Mecca Gecko, and each one has a home of its own.</p>
-          <a class="hero-jump" href="#games">See the games</a>
+      <div class="wrap">
+        <p class="hud hero-hud"><span class="dot"></span>Independent game studio <span class="sep">/</span> Raleigh, NC <span class="sep sm-hide">/</span> <span class="sm-hide">Est. 2026</span></p>
+        <h1 id="hero-title" class="display hero-title">Small studio.<br><span class="grad-text">Loud games.</span></h1>
+        <div class="hero-sub">
+          <p class="lede">Valux Games LLC makes funny, chaotic games for your phone. <strong>Mecca Gecko</strong> is out now on the App Store, <strong>Civic Watch</strong> is in beta, and Android versions of both are on the way.</p>
+          <ul class="platform-chips" aria-label="Platforms">
+            <li><svg aria-hidden="true"><use href="#i-apple"/></svg>iPhone</li>
+            <li><svg aria-hidden="true"><use href="#i-apple"/></svg>iPad</li>
+            <li><svg aria-hidden="true"><use href="#i-android"/></svg>Android <small>Soon</small></li>
+          </ul>
         </div>
-        <div class="collage">
-          <a class="shot" href="#civic-watch">
-            <img src="assets/images/civic-hero.webp" alt="" width="1600" height="900" fetchpriority="high">
-            <span>Civic Watch <small>In development</small></span>
-          </a>
-          <a class="shot shot-mecca" href="#mecca-gecko">
-            <img src="assets/images/mecca-hero.webp" alt="" width="1280" height="720">
-            <span>Mecca Gecko <small>Out now</small></span>
-          </a>
+
+        <h2 class="sr-only">Our games</h2>
+        <div class="picks">
+          <article class="pick pick-mecca" aria-labelledby="pick-mecca-title">
+            <img class="pick-art" src="assets/mecca/key.webp" alt="" width="1280" height="720" fetchpriority="high">
+            <span class="pick-corners" aria-hidden="true"></span>
+            <div class="pick-top">
+              <span class="tag tag-live">Out now</span>
+              <span class="hud">01 / Hide-and-seek party</span>
+            </div>
+            <div class="pick-body">
+              <h3 id="pick-mecca-title" class="pick-title"><img src="assets/mecca/logo.webp" alt="Mecca Gecko" width="640" height="427"></h3>
+              <p class="pick-line">Paint. Hide. Get spotted.</p>
+              <div class="pick-actions">
+                <a class="btn btn-light" href="https://apps.apple.com/us/app/mecca-gecko/id6801449754"><svg aria-hidden="true"><use href="#i-apple"/></svg>App Store</a>
+                <a class="btn btn-ghost" href="#mecca-gecko">Explore</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="pick pick-civic" aria-labelledby="pick-civic-title">
+            <img class="pick-art" src="assets/civic/key.webp" alt="" width="1280" height="720" fetchpriority="high">
+            <span class="pick-corners" aria-hidden="true"></span>
+            <div class="pick-top">
+              <span class="tag tag-beta">In beta</span>
+              <span class="hud">02 / Gun-comedy FPS</span>
+            </div>
+            <div class="pick-body">
+              <h3 id="pick-civic-title" class="pick-title display civic-mark"><svg aria-hidden="true"><use href="#i-civic"/></svg>Civic<br>Watch</h3>
+              <p class="pick-line">Remain calm. Report everything.</p>
+              <div class="pick-actions">
+                <a class="btn btn-gold" href="https://civicwatchgame.com/play/"><svg aria-hidden="true"><use href="#i-play"/></svg>Play the demo</a>
+                <a class="btn btn-ghost" href="#civic-watch">Explore</a>
+              </div>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <div id="games">
-      <section class="feature feature-civic" id="civic-watch" aria-labelledby="civic-title">
-        <div class="wrap feature-grid">
-          <div class="feature-copy">
-            <p class="kicker"><span class="num">01</span> In development</p>
-            <div class="title-row">
-              <img src="assets/images/civic-icon.webp" width="64" height="64" alt="">
-              <h2 id="civic-title">Civic Watch</h2>
-            </div>
-            <p class="tagline">Remain calm. Report everything.</p>
-            <p>A small town. A federal grant. A heavily armed neighborhood watch. Civic Watch is a gun-comedy FPS set in Fairview, with fourteen arenas, zombie waves, and neighbors who have been waiting to speak.</p>
-            <ul class="facts">
-              <li>14 arenas</li>
-              <li>Zombie modes</li>
-              <li>Browser demo</li>
-              <li>iPhone and iPad beta</li>
-            </ul>
-            <div class="actions">
-              <a class="button button-civic" href="https://civicwatchgame.com/">Official site</a>
-              <a class="quiet" href="https://civicwatchgame.com/play/">Play the demo</a>
-              <a class="quiet" href="https://testflight.apple.com/join/Fg7yHPDD">Join the beta</a>
-            </div>
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker-band">
+        <div class="ticker-track">
+          <div class="ticker-group">
+            <span>Paint. Hide. Get spotted.</span><b>✦</b>
+            <span>Remain calm. Report everything.</span><b>✦</b>
+            <span>Out now on the App Store</span><b>✦</b>
+            <span>Android on the way</span><b>✦</b>
+            <span>Made in Raleigh</span><b>✦</b>
           </div>
-          <div class="feature-art">
-            <figure>
-              <img src="assets/images/civic-hero.webp" alt="Pearl, Brenda and Hank organize neighborhood supplies and weapons on a Fairview street" width="1600" height="900" loading="lazy">
-              <figcaption>Loading-screen art</figcaption>
-            </figure>
-            <figure>
-              <img src="assets/images/civic-arena.webp" alt="Maple Court in-game arena preview" width="1280" height="800" loading="lazy">
-              <figcaption>Maple Court, in the game</figcaption>
-            </figure>
+          <div class="ticker-group">
+            <span>Paint. Hide. Get spotted.</span><b>✦</b>
+            <span>Remain calm. Report everything.</span><b>✦</b>
+            <span>Out now on the App Store</span><b>✦</b>
+            <span>Android on the way</span><b>✦</b>
+            <span>Made in Raleigh</span><b>✦</b>
           </div>
         </div>
-      </section>
-
-      <section class="feature feature-mecca" id="mecca-gecko" aria-labelledby="mecca-title">
-        <div class="wrap feature-grid">
-          <div class="feature-copy">
-            <p class="kicker"><span class="num">02</span> Out now</p>
-            <div class="title-row">
-              <img src="assets/images/mecca-mark.webp" width="64" height="64" alt="">
-              <h2 id="mecca-title">Mecca Gecko</h2>
-            </div>
-            <p class="tagline">Paint. Hide. Get spotted.</p>
-            <p>A free hide-and-seek party game for iPhone and iPad. Paint yourself into the scenery, become a suspiciously cute prop, or grab a toy paint blaster and find your friends. Four maps and thirty-four characters come with the game.</p>
-            <ul class="facts">
-              <li>Free on the App Store</li>
-              <li>iPhone and iPad</li>
-              <li>Rated 9+</li>
-              <li>Optional purchases</li>
-            </ul>
-            <div class="actions">
-              <a class="button button-gecko" href="https://apps.apple.com/us/app/mecca-gecko/id6801449754">App Store</a>
-              <a class="quiet" href="https://www.meccagecko.com/">Official site</a>
-            </div>
-          </div>
-          <div class="feature-art">
-            <figure>
-              <img src="assets/images/mecca-hero.webp" alt="Loading-screen artwork: Marshmallow blasts paint across Castle Keep while Gecko, Duck, Banana and Cowboy scatter" width="1280" height="720" loading="lazy">
-              <figcaption>Loading-screen art</figcaption>
-            </figure>
-            <figure>
-              <img src="assets/images/mecca-map.webp" alt="Gecko House front gate and bounce castle, an in-game render" width="1280" height="720" loading="lazy">
-              <figcaption>Gecko House, in the game</figcaption>
-            </figure>
-          </div>
-        </div>
-      </section>
+      </div>
     </div>
+
+    <section class="game game-mecca" id="mecca-gecko" aria-labelledby="mecca-title">
+      <div class="wrap game-intro">
+        <div class="game-copy" data-reveal>
+          <div class="game-id">
+            <img class="app-icon" src="assets/mecca/icon.webp" width="160" height="160" alt="" loading="lazy">
+            <div>
+              <p class="hud">Game 01</p>
+              <p class="status"><span class="dot"></span>Out now on iPhone &amp; iPad</p>
+            </div>
+          </div>
+          <h2 id="mecca-title" class="game-logo"><img src="assets/mecca/logo.webp" alt="Mecca Gecko" width="640" height="427" loading="lazy"></h2>
+          <p class="display slogan"><span class="c-pink">Paint.</span> <span class="c-cyan">Hide.</span><br><span class="c-lime">Get spotted.</span></p>
+          <p class="game-text">A free hide-and-seek party game. Paint yourself into the scenery, become a suspiciously cute prop, or grab a toy paint blaster and find your friends. Bot Play works offline, and friends can drop into an online party with an invite link.</p>
+          <dl class="stats">
+            <div><dt>Characters</dt><dd>34</dd></div>
+            <div><dt>Maps, all free</dt><dd>4</dd></div>
+            <div><dt>Ways to play</dt><dd>4</dd></div>
+            <div><dt>To download</dt><dd>Free</dd></div>
+          </dl>
+          <div class="store-row">
+            <a class="store-btn" href="https://apps.apple.com/us/app/mecca-gecko/id6801449754"><svg aria-hidden="true"><use href="#i-apple"/></svg><span><small>Download on the</small>App Store</span></a>
+            <span class="store-btn is-soon"><svg aria-hidden="true"><use href="#i-android"/></svg><span><small>Coming soon to</small>Google Play</span></span>
+          </div>
+          <p class="fine">Free to play · iOS 15 or later · Rated 9+ · Optional in-app purchases · <a href="https://www.meccagecko.com/">meccagecko.com</a></p>
+        </div>
+
+        <div class="mecca-stage" data-reveal>
+          <figure class="poster poster-a">
+            <img src="assets/mecca/art-seeker-squad.webp" alt="Chef, Cowboy and Detective charge through a paint-splattered room with toy paint blasters" width="960" height="540" loading="lazy">
+            <figcaption class="art-note">Loading-screen art</figcaption>
+          </figure>
+          <figure class="poster poster-b">
+            <img src="assets/mecca/art-hider-run.webp" alt="Banana, Corgi and Duck run from a rainbow paint trail" width="960" height="540" loading="lazy">
+          </figure>
+          <div class="dance-card" data-video>
+            <video muted loop playsinline preload="none" poster="assets/mecca/gecko-dance.webp" width="720" height="406" aria-label="Gecko dancing in sunglasses">
+              <source src="assets/mecca/gecko-dance.mp4" type="video/mp4">
+            </video>
+            <button class="motion-btn" type="button" data-video-toggle>Pause</button>
+          </div>
+          <p class="sticker" aria-hidden="true">Free<br>to<br>play</p>
+        </div>
+      </div>
+
+      <div class="roster" aria-labelledby="roster-title">
+        <div class="wrap roster-head">
+          <div>
+            <p class="hud">Meet the cast</p>
+            <h3 id="roster-title" class="h3">34 characters.<br>Pick a side.</h3>
+          </div>
+          <p>Hiders and seekers have separate wardrobes. Gecko and Marshmallow are free; every other character is an optional one-time purchase.</p>
+          <button class="motion-btn" type="button" data-marquee-toggle aria-controls="mecca-roster">Pause motion</button>
+        </div>
+        <div class="marquee" id="mecca-roster">
+          <div>
+            <div class="wrap"><p class="hud lane-label">Hiders <b>22</b></p></div>
+            <div class="marquee-lane lane-hiders">
+              <div class="marquee-row">
+                <ul class="marquee-list">
+                  <li class="char"><img src="assets/mecca/chars/gecko.webp" alt="" width="220" height="220" loading="lazy"><span>Gecko <em>Free</em></span></li>
+                  <li class="char"><img src="assets/mecca/chars/cat.webp" alt="" width="220" height="220" loading="lazy"><span>Orange Tabby</span></li>
+                  <li class="char"><img src="assets/mecca/chars/teddy.webp" alt="" width="220" height="220" loading="lazy"><span>Teddy</span></li>
+                  <li class="char"><img src="assets/mecca/chars/bunny.webp" alt="" width="220" height="220" loading="lazy"><span>Bunny</span></li>
+                  <li class="char"><img src="assets/mecca/chars/corgi.webp" alt="" width="220" height="220" loading="lazy"><span>Corgi</span></li>
+                  <li class="char"><img src="assets/mecca/chars/raccoon.webp" alt="" width="220" height="220" loading="lazy"><span>Raccoon</span></li>
+                  <li class="char"><img src="assets/mecca/chars/red-panda.webp" alt="" width="220" height="220" loading="lazy"><span>Red Panda</span></li>
+                  <li class="char"><img src="assets/mecca/chars/bolt.webp" alt="" width="220" height="220" loading="lazy"><span>Bolt</span></li>
+                  <li class="char"><img src="assets/mecca/chars/nova.webp" alt="" width="220" height="220" loading="lazy"><span>Nova</span></li>
+                  <li class="char"><img src="assets/mecca/chars/bloom.webp" alt="" width="220" height="220" loading="lazy"><span>Bloom</span></li>
+                  <li class="char"><img src="assets/mecca/chars/duck.webp" alt="" width="220" height="220" loading="lazy"><span>Duck</span></li>
+                  <li class="char"><img src="assets/mecca/chars/chicken.webp" alt="" width="220" height="220" loading="lazy"><span>Chicken</span></li>
+                  <li class="char"><img src="assets/mecca/chars/sloth.webp" alt="" width="220" height="220" loading="lazy"><span>Sloth</span></li>
+                  <li class="char"><img src="assets/mecca/chars/pig.webp" alt="" width="220" height="220" loading="lazy"><span>Pig</span></li>
+                  <li class="char"><img src="assets/mecca/chars/banana.webp" alt="" width="220" height="220" loading="lazy"><span>Banana</span></li>
+                  <li class="char"><img src="assets/mecca/chars/meowscles.webp" alt="" width="220" height="220" loading="lazy"><span>MuscleMeow</span></li>
+                  <li class="char"><img src="assets/mecca/chars/capybara.webp" alt="" width="220" height="220" loading="lazy"><span>Capybara</span></li>
+                  <li class="char"><img src="assets/mecca/chars/axolotl.webp" alt="" width="220" height="220" loading="lazy"><span>Axolotl</span></li>
+                  <li class="char"><img src="assets/mecca/chars/bunnyscles.webp" alt="" width="220" height="220" loading="lazy"><span>Bunnyscles</span></li>
+                  <li class="char"><img src="assets/mecca/chars/corgscles.webp" alt="" width="220" height="220" loading="lazy"><span>Corgscles</span></li>
+                  <li class="char"><img src="assets/mecca/chars/duckscles.webp" alt="" width="220" height="220" loading="lazy"><span>Duckscles</span></li>
+                  <li class="char"><img src="assets/mecca/chars/bearscles.webp" alt="" width="220" height="220" loading="lazy"><span>Bearscles</span></li>
+                </ul>
+                <ul class="marquee-list" aria-hidden="true">
+                  <li class="char"><img src="assets/mecca/chars/gecko.webp" alt="" width="220" height="220" loading="lazy"><span>Gecko <em>Free</em></span></li>
+                  <li class="char"><img src="assets/mecca/chars/cat.webp" alt="" width="220" height="220" loading="lazy"><span>Orange Tabby</span></li>
+                  <li class="char"><img src="assets/mecca/chars/teddy.webp" alt="" width="220" height="220" loading="lazy"><span>Teddy</span></li>
+                  <li class="char"><img src="assets/mecca/chars/bunny.webp" alt="" width="220" height="220" loading="lazy"><span>Bunny</span></li>
+                  <li class="char"><img src="assets/mecca/chars/corgi.webp" alt="" width="220" height="220" loading="lazy"><span>Corgi</span></li>
+                  <li class="char"><img src="assets/mecca/chars/raccoon.webp" alt="" width="220" height="220" loading="lazy"><span>Raccoon</span></li>
+                  <li class="char"><img src="assets/mecca/chars/red-panda.webp" alt="" width="220" height="220" loading="lazy"><span>Red Panda</span></li>
+                  <li class="char"><img src="assets/mecca/chars/bolt.webp" alt="" width="220" height="220" loading="lazy"><span>Bolt</span></li>
+                  <li class="char"><img src="assets/mecca/chars/nova.webp" alt="" width="220" height="220" loading="lazy"><span>Nova</span></li>
+                  <li class="char"><img src="assets/mecca/chars/bloom.webp" alt="" width="220" height="220" loading="lazy"><span>Bloom</span></li>
+                  <li class="char"><img src="assets/mecca/chars/duck.webp" alt="" width="220" height="220" loading="lazy"><span>Duck</span></li>
+                  <li class="char"><img src="assets/mecca/chars/chicken.webp" alt="" width="220" height="220" loading="lazy"><span>Chicken</span></li>
+                  <li class="char"><img src="assets/mecca/chars/sloth.webp" alt="" width="220" height="220" loading="lazy"><span>Sloth</span></li>
+                  <li class="char"><img src="assets/mecca/chars/pig.webp" alt="" width="220" height="220" loading="lazy"><span>Pig</span></li>
+                  <li class="char"><img src="assets/mecca/chars/banana.webp" alt="" width="220" height="220" loading="lazy"><span>Banana</span></li>
+                  <li class="char"><img src="assets/mecca/chars/meowscles.webp" alt="" width="220" height="220" loading="lazy"><span>MuscleMeow</span></li>
+                  <li class="char"><img src="assets/mecca/chars/capybara.webp" alt="" width="220" height="220" loading="lazy"><span>Capybara</span></li>
+                  <li class="char"><img src="assets/mecca/chars/axolotl.webp" alt="" width="220" height="220" loading="lazy"><span>Axolotl</span></li>
+                  <li class="char"><img src="assets/mecca/chars/bunnyscles.webp" alt="" width="220" height="220" loading="lazy"><span>Bunnyscles</span></li>
+                  <li class="char"><img src="assets/mecca/chars/corgscles.webp" alt="" width="220" height="220" loading="lazy"><span>Corgscles</span></li>
+                  <li class="char"><img src="assets/mecca/chars/duckscles.webp" alt="" width="220" height="220" loading="lazy"><span>Duckscles</span></li>
+                  <li class="char"><img src="assets/mecca/chars/bearscles.webp" alt="" width="220" height="220" loading="lazy"><span>Bearscles</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="wrap"><p class="hud lane-label">Seekers <b>12</b></p></div>
+            <div class="marquee-lane lane-seekers">
+              <div class="marquee-row">
+                <ul class="marquee-list">
+                  <li class="char"><img src="assets/mecca/chars/glowkin.webp" alt="" width="220" height="220" loading="lazy"><span>Marshmallow <em>Free</em></span></li>
+                  <li class="char"><img src="assets/mecca/chars/yeti.webp" alt="" width="220" height="220" loading="lazy"><span>Yeti</span></li>
+                  <li class="char"><img src="assets/mecca/chars/plush-dragon.webp" alt="" width="220" height="220" loading="lazy"><span>Plush Dragon</span></li>
+                  <li class="char"><img src="assets/mecca/chars/goblin.webp" alt="" width="220" height="220" loading="lazy"><span>Goblin</span></li>
+                  <li class="char"><img src="assets/mecca/chars/franken-mallow.webp" alt="" width="220" height="220" loading="lazy"><span>Franken-Mallow</span></li>
+                  <li class="char"><img src="assets/mecca/chars/mushroom-ogre.webp" alt="" width="220" height="220" loading="lazy"><span>Mushroom Ogre</span></li>
+                  <li class="char"><img src="assets/mecca/chars/werewolf-plush.webp" alt="" width="220" height="220" loading="lazy"><span>Werewolf</span></li>
+                  <li class="char"><img src="assets/mecca/chars/pumpkin-head.webp" alt="" width="220" height="220" loading="lazy"><span>Pumpkin Head</span></li>
+                  <li class="char"><img src="assets/mecca/chars/chef.webp" alt="" width="220" height="220" loading="lazy"><span>Chef</span></li>
+                  <li class="char"><img src="assets/mecca/chars/cowboy.webp" alt="" width="220" height="220" loading="lazy"><span>Cowboy</span></li>
+                  <li class="char"><img src="assets/mecca/chars/detective.webp" alt="" width="220" height="220" loading="lazy"><span>Detective</span></li>
+                  <li class="char"><img src="assets/mecca/chars/grip-pilot.webp" alt="" width="220" height="220" loading="lazy"><span>Pilot</span></li>
+                </ul>
+                <ul class="marquee-list" aria-hidden="true">
+                  <li class="char"><img src="assets/mecca/chars/glowkin.webp" alt="" width="220" height="220" loading="lazy"><span>Marshmallow <em>Free</em></span></li>
+                  <li class="char"><img src="assets/mecca/chars/yeti.webp" alt="" width="220" height="220" loading="lazy"><span>Yeti</span></li>
+                  <li class="char"><img src="assets/mecca/chars/plush-dragon.webp" alt="" width="220" height="220" loading="lazy"><span>Plush Dragon</span></li>
+                  <li class="char"><img src="assets/mecca/chars/goblin.webp" alt="" width="220" height="220" loading="lazy"><span>Goblin</span></li>
+                  <li class="char"><img src="assets/mecca/chars/franken-mallow.webp" alt="" width="220" height="220" loading="lazy"><span>Franken-Mallow</span></li>
+                  <li class="char"><img src="assets/mecca/chars/mushroom-ogre.webp" alt="" width="220" height="220" loading="lazy"><span>Mushroom Ogre</span></li>
+                  <li class="char"><img src="assets/mecca/chars/werewolf-plush.webp" alt="" width="220" height="220" loading="lazy"><span>Werewolf</span></li>
+                  <li class="char"><img src="assets/mecca/chars/pumpkin-head.webp" alt="" width="220" height="220" loading="lazy"><span>Pumpkin Head</span></li>
+                  <li class="char"><img src="assets/mecca/chars/chef.webp" alt="" width="220" height="220" loading="lazy"><span>Chef</span></li>
+                  <li class="char"><img src="assets/mecca/chars/cowboy.webp" alt="" width="220" height="220" loading="lazy"><span>Cowboy</span></li>
+                  <li class="char"><img src="assets/mecca/chars/detective.webp" alt="" width="220" height="220" loading="lazy"><span>Detective</span></li>
+                  <li class="char"><img src="assets/mecca/chars/grip-pilot.webp" alt="" width="220" height="220" loading="lazy"><span>Pilot</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="wrap"><p class="fine">Promotional character artwork. In-game models may vary slightly.</p></div>
+      </div>
+
+      <div class="wrap modes">
+        <div class="section-head split" data-reveal>
+          <div>
+            <p class="hud">Four ways to play</p>
+            <h3 class="h3">Go solo with bots.<br>Or bring the group.</h3>
+          </div>
+          <p class="note">Pick a hiding style, pick a game type, and try to keep a straight face. While hiders hide, seekers play mini games.</p>
+        </div>
+        <ul class="mode-grid">
+          <li class="mode mode-paint" data-reveal>
+            <img src="assets/mecca/mode-classic.webp" alt="" width="640" height="320" loading="lazy">
+            <div class="mode-body">
+              <p class="hud">Hide style</p>
+              <h4>Hide and Paint</h4>
+              <p>Sample colors and patterns, paint your character, then crouch, curl up, lie flat or cling to a wall.</p>
+            </div>
+          </li>
+          <li class="mode mode-props" data-reveal>
+            <img src="assets/mecca/mode-props.webp" alt="" width="640" height="360" loading="lazy">
+            <div class="mode-body">
+              <p class="hud">Hide style</p>
+              <h4>Prop Hunt</h4>
+              <p>Copy an object in the map and tuck yourself among the real props. Seekers have to spot what doesn’t belong.</p>
+            </div>
+          </li>
+          <li class="mode mode-rvb" data-reveal>
+            <img src="assets/mecca/mode-red-blue.webp" alt="" width="640" height="640" loading="lazy">
+            <div class="mode-body">
+              <p class="hud">Game type</p>
+              <h4>Red vs Blue</h4>
+              <p>A team series that swaps hiding and seeking between rounds. Play it with Hide and Paint or Prop Hunt.</p>
+            </div>
+          </li>
+          <li class="mode mode-infection" data-reveal>
+            <img src="assets/mecca/mode-infection.webp" alt="" width="640" height="320" loading="lazy">
+            <div class="mode-body">
+              <p class="hud">Game type <em>New</em></p>
+              <h4>Infection</h4>
+              <p>Every hider who gets hit becomes a seeker. Survive to the buzzer, or infect everyone.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="wrap maps">
+        <div class="section-head split" data-reveal>
+          <div>
+            <p class="hud">Four places to disappear</p>
+            <h3 class="h3">Every map<br>is free.</h3>
+          </div>
+          <p class="note">A party house, a tropical island, a medieval keep and a glass orangery, plus a lobby where everyone waits for the host.</p>
+        </div>
+        <ul class="map-grid">
+          <li data-reveal>
+            <figure class="map">
+              <img src="assets/mecca/map-gecko-house.webp" alt="Gecko House front gate and bounce castle" width="900" height="506" loading="lazy">
+              <figcaption><strong>Gecko House</strong><span>Living rooms, a kitchen, a backyard gazebo and a bounce castle.</span></figcaption>
+            </figure>
+          </li>
+          <li data-reveal>
+            <figure class="map">
+              <img src="assets/mecca/map-palm-cove.webp" alt="Palm Cove beach, pier and tiki huts" width="900" height="506" loading="lazy">
+              <figcaption><strong>Palm Cove</strong><span>Beaches, jungle, a tiki village and stilt huts on a volcanic island.</span></figcaption>
+            </figure>
+          </li>
+          <li data-reveal>
+            <figure class="map">
+              <img src="assets/mecca/map-castle-keep.webp" alt="Castle Keep towers and walled courtyard" width="900" height="506" loading="lazy">
+              <figcaption><strong>Castle Keep</strong><span>A market courtyard, a great hall, cottages and walled gardens.</span></figcaption>
+            </figure>
+          </li>
+          <li data-reveal>
+            <figure class="map">
+              <img src="assets/mecca/map-conservatory.webp" alt="The Conservatory kitchen garden with a wooden sign" width="900" height="506" loading="lazy">
+              <figcaption><strong>The Conservatory</strong><span>Glasshouses, a potting shed, a fern walk and a sunny patio.</span></figcaption>
+            </figure>
+          </li>
+        </ul>
+        <p class="fine">Real in-game renders from the latest build.</p>
+      </div>
+    </section>
+
+    <section class="game game-civic" id="civic-watch" aria-labelledby="civic-title">
+      <div class="civic-feature">
+        <div class="civic-video" data-video>
+          <video muted loop playsinline preload="none" poster="assets/civic/reel-poster.webp" width="848" height="476" aria-label="Operative intro clips: Pearl, Pepe, Rico, Libby, Pierre and Floyd">
+            <source src="assets/civic/reel.mp4" type="video/mp4">
+          </video>
+          <div class="cam-hud" aria-hidden="true"><span class="rec">Rec</span><span>Cam 04 · Fairview</span></div>
+          <p class="art-note">Operative intros from character select</p>
+          <button class="motion-btn" type="button" data-video-toggle>Pause</button>
+        </div>
+        <div class="wrap civic-copy-wrap">
+          <div class="game-copy civic-copy" data-reveal>
+            <div class="game-id">
+              <img class="app-icon" src="assets/civic/icon.webp" width="160" height="160" alt="" loading="lazy">
+              <div>
+                <p class="hud">Game 02</p>
+                <p class="status"><span class="dot dot-beta"></span>In beta on iPhone &amp; iPad</p>
+              </div>
+            </div>
+            <h2 id="civic-title" class="display civic-title">Civic<br>Watch</h2>
+            <p class="civic-slogan">Remain calm. Report everything.</p>
+            <p class="game-text">A small town. A federal grant. A heavily armed neighborhood watch. Civic Watch is a gun-comedy FPS set in Fairview, with bot deathmatch, zombie waves, online parties and neighbors who have been waiting to speak.</p>
+            <dl class="stats">
+              <div><dt>Selectable locals</dt><dd>29</dd></div>
+              <div><dt>Arenas, some haunted</dt><dd>14</dd></div>
+              <div><dt>Weapons, many grudges</dt><dd>14</dd></div>
+              <div><dt>Very bad idea</dt><dd>1</dd></div>
+            </dl>
+            <div class="store-row">
+              <a class="btn btn-gold" href="https://civicwatchgame.com/play/"><svg aria-hidden="true"><use href="#i-play"/></svg>Play the free demo</a>
+              <a class="store-btn" href="https://testflight.apple.com/join/Fg7yHPDD"><svg aria-hidden="true"><use href="#i-apple"/></svg><span><small>Join the beta on</small>TestFlight</span></a>
+              <span class="store-btn is-soon"><svg aria-hidden="true"><use href="#i-android"/></svg><span><small>Coming soon to</small>Google Play</span></span>
+            </div>
+            <p class="fine">Contains combat and zombie violence. Beta places open and close through TestFlight. <a href="https://civicwatchgame.com/">civicwatchgame.com</a></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="wrap cast">
+        <div class="section-head split" data-reveal>
+          <div>
+            <p class="hud">Persons of interest</p>
+            <h3 class="h3">Meet the<br>neighborhood watch.</h3>
+          </div>
+          <p class="note">Farmers. Soccer moms. An HOA president with too much authority. Pick a personality: every selectable operative shares the same combat stats.</p>
+        </div>
+        <ul class="cast-grid" data-reveal>
+          <li class="dossier"><img src="assets/civic/cast/brenda.webp" alt="" width="300" height="450" loading="lazy"><div class="dossier-meta"><span class="dossier-id">CW / 001</span><strong>Brenda</strong><span class="dossier-role">Minivan logistics commander</span></div></li>
+          <li class="dossier"><img src="assets/civic/cast/hank.webp" alt="" width="300" height="450" loading="lazy"><div class="dossier-meta"><span class="dossier-id">CW / 002</span><strong>Hank</strong><span class="dossier-role">Actually-prepared farm operator</span></div></li>
+          <li class="dossier"><img src="assets/civic/cast/pearl.webp" alt="" width="300" height="450" loading="lazy"><div class="dossier-meta"><span class="dossier-id">CW / 003</span><strong>Pearl</strong><span class="dossier-role">Casserole-and-carbine grandma</span></div></li>
+          <li class="dossier"><img src="assets/civic/cast/preston.webp" alt="" width="300" height="450" loading="lazy"><div class="dossier-meta"><span class="dossier-id">CW / 004</span><strong>Preston</strong><span class="dossier-role">Bylaw-quoting HOA warlord</span></div></li>
+          <li class="dossier"><img src="assets/civic/cast/rook.webp" alt="" width="300" height="450" loading="lazy"><div class="dossier-meta"><span class="dossier-id">CW / 005</span><strong>Rook</strong><span class="dossier-role">Field operative</span></div></li>
+          <li class="dossier"><img src="assets/civic/cast/viper.webp" alt="" width="300" height="450" loading="lazy"><div class="dossier-meta"><span class="dossier-id">CW / 006</span><strong>Viper</strong><span class="dossier-role">Special operations</span></div></li>
+          <li class="dossier"><img src="assets/civic/cast/warren.webp" alt="" width="300" height="450" loading="lazy"><div class="dossier-meta"><span class="dossier-id">CW / 008</span><strong>Warren</strong><span class="dossier-role">Wheezing basement camper</span></div></li>
+          <li class="dossier"><img src="assets/civic/cast/crane.webp" alt="" width="300" height="450" loading="lazy"><div class="dossier-meta"><span class="dossier-id">CW / 009</span><strong>Crane</strong><span class="dossier-role">Walking hitbox rumor</span></div></li>
+          <li class="dossier"><img src="assets/civic/cast/neb.webp" alt="" width="300" height="450" loading="lazy"><div class="dossier-meta"><span class="dossier-id">CW / 013</span><strong>Neb</strong><span class="dossier-role">Meta gamer, zero cardio</span></div></li>
+          <li class="dossier"><img src="assets/civic/cast/rico.webp" alt="" width="300" height="450" loading="lazy"><div class="dossier-meta"><span class="dossier-id">CW / 014</span><strong>Rico</strong><span class="dossier-role">Contract-blind street hustler</span></div></li>
+          <li class="dossier"><img src="assets/civic/cast/raven.webp" alt="" width="300" height="450" loading="lazy"><div class="dossier-meta"><span class="dossier-id">CW / 015</span><strong>Raven</strong><span class="dossier-role">Emo anime antihero</span></div></li>
+          <li class="dossier"><img src="assets/civic/cast/libby.webp" alt="" width="300" height="450" loading="lazy"><div class="dossier-meta"><span class="dossier-id">CW / 017</span><strong>Libby</strong><span class="dossier-role">Trigger-happy therapy glossary</span></div></li>
+          <li class="dossier"><img src="assets/civic/cast/harold.webp" alt="" width="300" height="450" loading="lazy"><div class="dossier-meta"><span class="dossier-id">CW / 018</span><strong>Harold</strong><span class="dossier-role">Inflation-raged ancient retiree</span></div></li>
+          <li class="dossier"><img src="assets/civic/cast/floyd.webp" alt="" width="300" height="450" loading="lazy"><div class="dossier-meta"><span class="dossier-id">CW / 020</span><strong>Floyd</strong><span class="dossier-role">All-knowing combat mailman</span></div></li>
+          <li class="dossier"><img src="assets/civic/cast/pepe.webp" alt="" width="300" height="450" loading="lazy"><div class="dossier-meta"><span class="dossier-id">CW / 028</span><strong>Pepe</strong><span class="dossier-role">Off-comms taco legend</span></div></li>
+          <li class="dossier"><img src="assets/civic/cast/pierre.webp" alt="" width="300" height="450" loading="lazy"><div class="dossier-meta"><span class="dossier-id">CW / 031</span><strong>Pierre</strong><span class="dossier-role">Pink-shorts drip assassin</span></div></li>
+        </ul>
+        <p class="fine">16 of 29 selectable locals. Dossier jokes describe personalities, not special abilities.</p>
+      </div>
+
+      <div class="wrap arenas" data-arenas data-mode="day">
+        <div class="section-head split" data-reveal>
+          <div>
+            <p class="hud">Know your surroundings</p>
+            <h3 class="h3">14 arenas.<br>Some haunted.</h3>
+          </div>
+          <div class="mode-switch" role="group" aria-label="Arena lighting">
+            <button type="button" data-arena-mode="day" aria-pressed="true">Deathmatch</button>
+            <button type="button" data-arena-mode="undead" aria-pressed="false">Zombies</button>
+          </div>
+        </div>
+        <ul class="arena-grid">
+          <li class="arena" data-reveal>
+            <div class="arena-img">
+              <img src="assets/civic/arenas/neighborhood.webp" alt="Maple Court" width="800" height="500" loading="lazy">
+              <img class="undead" src="assets/civic/arenas/neighborhood-undead.webp" alt="Maple Court in Zombies lighting" width="800" height="500" loading="lazy" aria-hidden="true">
+            </div>
+            <div class="arena-meta"><span>01</span><strong>Maple Court</strong><p>A golden-hour suburb with back-to-back backyards and ten enterable homes.</p></div>
+          </li>
+          <li class="arena" data-reveal>
+            <div class="arena-img">
+              <img src="assets/civic/arenas/yacht.webp" alt="Miami Yacht" width="800" height="500" loading="lazy">
+              <img class="undead" src="assets/civic/arenas/yacht-undead.webp" alt="Miami Yacht in Zombies lighting" width="800" height="500" loading="lazy" aria-hidden="true">
+            </div>
+            <div class="arena-meta"><span>02</span><strong>Miami Yacht</strong><p>Teak decks, cabins and the Miami skyline from a Biscayne marina.</p></div>
+          </li>
+          <li class="arena" data-reveal>
+            <div class="arena-img">
+              <img src="assets/civic/arenas/streets.webp" alt="Night Streets" width="800" height="500" loading="lazy">
+              <img class="undead" src="assets/civic/arenas/streets-undead.webp" alt="Night Streets in Zombies lighting" width="800" height="500" loading="lazy" aria-hidden="true">
+            </div>
+            <div class="arena-meta"><span>03</span><strong>Night Streets</strong><p>A rain-wet city block on a canal, with a lion-guarded square and a stalled tram.</p></div>
+          </li>
+          <li class="arena" data-reveal>
+            <div class="arena-img">
+              <img src="assets/civic/arenas/facility.webp" alt="Research Facility" width="800" height="500" loading="lazy">
+              <img class="undead" src="assets/civic/arenas/facility-undead.webp" alt="Research Facility in Zombies lighting" width="800" height="500" loading="lazy" aria-hidden="true">
+            </div>
+            <div class="arena-meta"><span>04</span><strong>Research Facility</strong><p>Tiled washrooms, laboratories, six processing tanks and a loading bay.</p></div>
+          </li>
+          <li class="arena" data-reveal>
+            <div class="arena-img">
+              <img src="assets/civic/arenas/archives.webp" alt="Archives" width="800" height="500" loading="lazy">
+              <img class="undead" src="assets/civic/arenas/archives-undead.webp" alt="Archives in Zombies lighting" width="800" height="500" loading="lazy" aria-hidden="true">
+            </div>
+            <div class="arena-meta"><span>05</span><strong>Archives</strong><p>A 1936 state archives on a civic plaza, with library lions and a scholar fountain.</p></div>
+          </li>
+          <li class="arena" data-reveal>
+            <div class="arena-img">
+              <img src="assets/civic/arenas/station.webp" alt="Last Chance Gas" width="800" height="500" loading="lazy">
+              <img class="undead" src="assets/civic/arenas/station-undead.webp" alt="Last Chance Gas in Zombies lighting" width="800" height="500" loading="lazy" aria-hidden="true">
+            </div>
+            <div class="arena-meta"><span>06</span><strong>Last Chance Gas</strong><p>The last pumps for 86 miles: a canopy forecourt and a glass-front mini-mart.</p></div>
+          </li>
+        </ul>
+        <p class="fine">In-game renders. Every arena goes dark for Zombies.</p>
+      </div>
+    </section>
+
+    <section class="platforms" id="platforms" aria-labelledby="platforms-title">
+      <div class="wrap">
+        <div class="section-head split" data-reveal>
+          <div>
+            <p class="hud">Where to play</p>
+            <h2 id="platforms-title" class="h2">On Apple now.<br><span class="grad-text">Android next.</span></h2>
+          </div>
+          <p class="note">Both games are built for touch first, on iPhone and iPad. Android versions of Mecca Gecko and Civic Watch are in the works.</p>
+        </div>
+        <div class="plat-grid">
+          <article class="plat-card plat-mecca" data-reveal>
+            <div class="plat-head">
+              <img src="assets/mecca/icon.webp" width="160" height="160" alt="" loading="lazy">
+              <div>
+                <h3>Mecca Gecko</h3>
+                <p>Hide-and-seek party game · Rated 9+</p>
+              </div>
+            </div>
+            <ul class="plat-list">
+              <li>
+                <span class="plat-name"><svg aria-hidden="true"><use href="#i-apple"/></svg>iPhone &amp; iPad</span>
+                <span class="pill pill-live">Out now</span>
+                <a href="https://apps.apple.com/us/app/mecca-gecko/id6801449754">App Store<svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+              </li>
+              <li>
+                <span class="plat-name"><svg aria-hidden="true"><use href="#i-android"/></svg>Android</span>
+                <span class="pill pill-soon">Coming soon</span>
+              </li>
+            </ul>
+          </article>
+          <article class="plat-card plat-civic" data-reveal>
+            <div class="plat-head">
+              <img src="assets/civic/icon.webp" width="160" height="160" alt="" loading="lazy">
+              <div>
+                <h3>Civic Watch</h3>
+                <p>Gun-comedy FPS · Combat and zombie violence</p>
+              </div>
+            </div>
+            <ul class="plat-list">
+              <li>
+                <span class="plat-name"><svg aria-hidden="true"><use href="#i-apple"/></svg>iPhone &amp; iPad</span>
+                <span class="pill pill-beta">Beta</span>
+                <a href="https://testflight.apple.com/join/Fg7yHPDD">TestFlight<svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+              </li>
+              <li>
+                <span class="plat-name"><svg aria-hidden="true"><use href="#i-android"/></svg>Android</span>
+                <span class="pill pill-soon">Coming soon</span>
+              </li>
+              <li>
+                <span class="plat-name"><svg aria-hidden="true"><use href="#i-globe"/></svg>Web browser</span>
+                <span class="pill pill-live">Free demo</span>
+                <a href="https://civicwatchgame.com/play/">Play now<svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+              </li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
 
     <section class="studio" id="studio" aria-labelledby="studio-title">
       <div class="wrap studio-grid">
-        <div>
-          <p class="eyebrow">The studio</p>
-          <h2 id="studio-title">Made in Raleigh.</h2>
-          <p>Valux Games LLC develops and publishes its own games, from the build a player downloads to the page that explains it. Civic Watch is in beta, with a free browser demo. Mecca Gecko is out on the App Store.</p>
+        <div data-reveal>
+          <p class="hud">The studio</p>
+          <h2 id="studio-title" class="h2">Made in<br>Raleigh, NC.</h2>
+          <p class="lede">Valux Games LLC develops and publishes its own games, from the build a player downloads to the page that explains it. We like games that are easy to pick up, hard to put down, and best played with the group chat.</p>
+          <dl class="facts">
+            <div><dt>Company</dt><dd>Valux Games LLC</dd></div>
+            <div><dt>Founded</dt><dd>2026, North Carolina</dd></div>
+            <div><dt>Games</dt><dd>Mecca Gecko, Civic Watch</dd></div>
+            <div><dt>Platforms</dt><dd>iPhone, iPad, Android soon</dd></div>
+          </dl>
         </div>
-        <dl class="studio-facts">
-          <div>
-            <dt>Company</dt>
-            <dd>Valux Games LLC</dd>
-          </div>
-          <div>
-            <dt>Formed</dt>
-            <dd>2026, North Carolina</dd>
-          </div>
-          <div>
-            <dt>Studio site</dt>
-            <dd>valuxgames.com</dd>
-          </div>
-          <div>
-            <dt>Also</dt>
-            <dd>valuxgaming.com</dd>
-          </div>
-        </dl>
-      </div>
-    </section>
 
-    <section class="contact" id="contact" aria-labelledby="contact-title">
-      <div class="wrap contact-grid">
-        <div>
-          <p class="eyebrow">Contact</p>
-          <h2 id="contact-title">Write the studio.</h2>
-          <p>Players and studio questions go to support. Privacy, terms, and other legal notes go to legal. Each game also has its own website.</p>
-          <ul class="emails">
-            <li>
-              <small>Support</small>
-              <a href="mailto:support@valuxgames.com">support@valuxgames.com</a>
-            </li>
-            <li>
-              <small>Legal</small>
-              <a href="mailto:legal@valuxgames.com">legal@valuxgames.com</a>
-            </li>
+        <section class="contact-card" id="contact" aria-labelledby="contact-title" data-reveal>
+          <p class="hud">Contact</p>
+          <h2 id="contact-title" class="h3">Say hello.</h2>
+          <ul class="mail-list">
+            <li><small>Players and the studio</small><a href="mailto:support@valuxgames.com">support@valuxgames.com</a></li>
+            <li><small>Privacy, terms and legal</small><a href="mailto:legal@valuxgames.com">legal@valuxgames.com</a></li>
           </ul>
-        </div>
-        <address>
-          Valux Games LLC<br>
-          127 W Hargett Street<br>
-          Suite 301, PMB 119<br>
-          Raleigh, NC 27601<br>
-          United States<br>
-          <a href="tel:+19193718096">(919) 371-8096</a>
-        </address>
-        <ul class="support-links">
-          <li><a href="https://civicwatchgame.com/support.html">Civic Watch support</a></li>
-          <li><a href="https://www.meccagecko.com/support.html">Mecca Gecko support</a></li>
-          <li><a href="privacy.html">Privacy</a></li>
-          <li><a href="terms.html">Terms</a></li>
-        </ul>
+          <address>
+            Valux Games LLC<br>
+            127 W Hargett Street, Suite 301, PMB 119<br>
+            Raleigh, NC 27601, United States<br>
+            <a href="tel:+19193718096">(919) 371-8096</a>
+          </address>
+          <ul class="support-links">
+            <li><a href="https://www.meccagecko.com/support.html">Mecca Gecko support</a></li>
+            <li><a href="https://civicwatchgame.com/support.html">Civic Watch support</a></li>
+          </ul>
+        </section>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="wrap footer-grid">
-      <div>
-        <p>© 2026 Valux Games LLC. All rights reserved.</p>
-        <p>Civic Watch and Mecca Gecko are games from Valux Games LLC.</p>
-        <p><a href="mailto:support@valuxgames.com">support@valuxgames.com</a> · <a href="mailto:legal@valuxgames.com">legal@valuxgames.com</a></p>
-      </div>
-      <nav class="footer-links" aria-label="Legal">
+    <div class="wrap footer-top">
+      <a class="brand" href="./" aria-label="Valux Games home">
+        <svg class="brand-mark" aria-hidden="true"><use href="#i-valux"/></svg>
+        <span class="brand-word">Valux <span>Games</span></span>
+      </a>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="https://www.meccagecko.com/">meccagecko.com</a>
+        <a href="https://civicwatchgame.com/">civicwatchgame.com</a>
         <a href="privacy.html">Privacy</a>
         <a href="terms.html">Terms</a>
+        <a href="mailto:support@valuxgames.com">support@valuxgames.com</a>
       </nav>
     </div>
+    <div class="wrap footer-bottom">
+      <p>© 2026 Valux Games LLC. All rights reserved. Mecca Gecko and Civic Watch are games from Valux Games LLC.</p>
+      <p>Apple, App Store, iPhone, iPad and TestFlight are trademarks of Apple Inc. Google Play and Android are trademarks of Google LLC.</p>
+    </div>
+    <p class="footer-giant" aria-hidden="true">Valux Games</p>
   </footer>
-  <script src="js/site.js" defer></script>
+  <script src="js/site.js?v=20260930" defer></script>
 </body>
 </html>

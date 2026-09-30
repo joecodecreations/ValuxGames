@@ -3,59 +3,86 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#0c0b09">
+  <meta name="theme-color" content="#08080c">
   <meta name="color-scheme" content="dark">
   <title>Page not found — Valux Games</title>
   <meta name="description" content="That page is not on the Valux Games site.">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="icon" href="icon.png" type="image/png" sizes="32x32">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <link rel="stylesheet" href="css/site.css">
+  <link rel="stylesheet" href="css/site.css?v=20260930">
   <script>document.documentElement.classList.add("js")</script>
 </head>
 <body>
+  <svg class="icon-sprite" aria-hidden="true" focusable="false">
+    <defs>
+      <linearGradient id="vx-grad" x1="0" y1="0" x2="1" y2=".45">
+        <stop offset="0" stop-color="#8b6cff"/>
+        <stop offset="1" stop-color="#ff4fa3"/>
+      </linearGradient>
+    </defs>
+    <symbol id="i-valux" viewBox="0 0 64 64">
+      <path d="M4 10h15l13 30 13-30h15L39 56H25z" fill="url(#vx-grad)"/>
+      <path d="M32 12l5 5-5 5-5-5z" fill="#fff"/>
+    </symbol>
+    <symbol id="i-apple" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/>
+    </symbol>
+  </svg>
+
   <a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-header">
+
+  <header class="site-header" data-header>
     <div class="wrap header-inner">
-      <a class="wordmark" href="./" aria-label="Valux Games home">
-        <svg class="mark" viewBox="0 0 64 64" aria-hidden="true">
-          <path d="M8 6 L32 50 L56 6" fill="none" stroke="currentColor" stroke-width="6" stroke-linejoin="miter"/>
-          <circle cx="32" cy="58" r="4" fill="#e2a23a"/>
-        </svg>
-        <span>Valux <em>Games</em></span>
+      <a class="brand" href="./" aria-label="Valux Games home">
+        <svg class="brand-mark" aria-hidden="true"><use href="#i-valux"/></svg>
+        <span class="brand-word">Valux <span>Games</span></span>
       </a>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="nav-toggle-bars" aria-hidden="true"></span>
+        <span class="nav-toggle-label">Menu</span>
+      </button>
       <nav id="site-nav" class="site-nav" aria-label="Primary">
-        <a href="./#games">Games</a>
+        <a href="./#mecca-gecko">Mecca Gecko</a>
+        <a href="./#civic-watch">Civic Watch</a>
+        <a href="./#platforms">Platforms</a>
         <a href="./#studio">Studio</a>
-        <a href="./#contact">Contact</a>
+        <a class="nav-cta" href="https://apps.apple.com/us/app/mecca-gecko/id6801449754"><svg aria-hidden="true"><use href="#i-apple"/></svg>Get Mecca Gecko</a>
       </nav>
     </div>
   </header>
   <main id="main" class="page missing">
     <div class="wrap prose">
-      <p class="eyebrow">404</p>
+      <p class="hud">404</p>
       <h1>This address has no page.</h1>
       <p>The studio site is a short one. The games live on their own websites.</p>
-      <div class="actions">
-        <a class="button" href="./">Back to Valux Games</a>
-        <a class="quiet" href="./#games">See the games</a>
+      <div class="pick-actions">
+        <a class="btn btn-light" href="./">Back to Valux Games</a>
+        <a class="btn btn-ghost" href="./#mecca-gecko">See the games</a>
       </div>
     </div>
   </main>
+
   <footer class="site-footer">
-    <div class="wrap footer-grid">
-      <div>
-        <p>© 2026 Valux Games LLC. All rights reserved.</p>
-        <p>Civic Watch and Mecca Gecko are games from Valux Games LLC.</p>
-        <p><a href="mailto:support@valuxgames.com">support@valuxgames.com</a> · <a href="mailto:legal@valuxgames.com">legal@valuxgames.com</a></p>
-      </div>
-      <nav class="footer-links" aria-label="Legal">
+    <div class="wrap footer-top">
+      <a class="brand" href="./" aria-label="Valux Games home">
+        <svg class="brand-mark" aria-hidden="true"><use href="#i-valux"/></svg>
+        <span class="brand-word">Valux <span>Games</span></span>
+      </a>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="https://www.meccagecko.com/">meccagecko.com</a>
+        <a href="https://civicwatchgame.com/">civicwatchgame.com</a>
         <a href="privacy.html">Privacy</a>
         <a href="terms.html">Terms</a>
+        <a href="mailto:support@valuxgames.com">support@valuxgames.com</a>
       </nav>
     </div>
+    <div class="wrap footer-bottom">
+      <p>© 2026 Valux Games LLC. All rights reserved. Mecca Gecko and Civic Watch are games from Valux Games LLC.</p>
+      <p>Legal notes: <a href="mailto:legal@valuxgames.com">legal@valuxgames.com</a></p>
+    </div>
+    <p class="footer-giant" aria-hidden="true">Valux Games</p>
   </footer>
-  <script src="js/site.js" defer></script>
+  <script src="js/site.js?v=20260930" defer></script>
 </body>
 </html>
