@@ -66,6 +66,8 @@ def main():
         parser.feed(html.read_text(encoding="utf-8"))
         if not "".join(parser.title).strip():
             errors.append(f"{html.name}: missing title")
+        if "G-8QK7CXD707" not in html.read_text(encoding="utf-8"):
+            errors.append(f"{html.name}: missing Google tag")
         if not parser.has_desc:
             errors.append(f"{html.name}: missing meta description")
         if parser.missing_alt:
@@ -96,14 +98,16 @@ def main():
         "Mecca Gecko",
         "Raleigh",
         "support@valuxgames.com",
-        "legal@valuxgames.com",
     ):
         if phrase not in index:
             errors.append(f"index missing {phrase}")
     for page in ("privacy.html", "terms.html"):
         text = (ROOT / page).read_text(encoding="utf-8")
-        if "legal@valuxgames.com" not in text or "support@valuxgames.com" not in text:
+        if "support@valuxgames.com" not in text:
             errors.append(f"{page} missing studio email")
+    privacy = (ROOT / "privacy.html").read_text(encoding="utf-8")
+    if "Google Analytics" not in privacy:
+        errors.append("privacy.html does not describe Google Analytics")
     for url in (
         "https://civicwatchgame.com/",
         "https://civicwatchgame.com/play/",
