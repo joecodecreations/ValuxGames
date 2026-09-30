@@ -12,7 +12,7 @@ The site introduces the studio and links out to the games:
 Public addresses on the site:
 
 - `support@valuxgames.com` — players and the studio
-- `legal@valuxgames.com` — privacy, terms, and other legal notes
+- `support@valuxgames.com` — privacy, terms, and other legal notes
 
 ## Preview
 
