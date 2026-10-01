@@ -6,6 +6,7 @@ The site introduces the studio and links out to the games:
 
 - [Civic Watch](https://civicwatchgame.com/) — in development, with a browser demo and an iPhone and iPad beta
 - [Mecca Gecko](https://www.meccagecko.com/) — out now on the App Store
+- [Echo Brawlers: Roll & Fight](https://www.roblox.com/games/83952850539551/ECHO-BRAWLERS-Roll-Fight) — live on Roblox
 
 `valuxgames.com` is the canonical host. `valuxgaming.com` redirects there.
 

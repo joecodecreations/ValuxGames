@@ -15,7 +15,7 @@
   <meta name="theme-color" content="#08080c">
   <meta name="color-scheme" content="dark">
   <title>Valux Games — Independent mobile game studio</title>
-  <meta name="description" content="Valux Games LLC is an independent mobile game studio in Raleigh, North Carolina. Mecca Gecko is out now on the App Store, Civic Watch is in beta, and Android versions are on the way.">
+  <meta name="description" content="Valux Games LLC is an independent game studio in Raleigh, North Carolina. Mecca Gecko is out now on the App Store, Echo Brawlers is live on Roblox, Civic Watch is in beta, and Android versions are on the way.">
   <link rel="canonical" href="https://valuxgames.com/">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="icon" href="icon.png" type="image/png" sizes="32x32">
@@ -27,7 +27,7 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Valux Games">
   <meta property="og:title" content="Valux Games — Small studio. Loud games.">
-  <meta property="og:description" content="The studio behind Mecca Gecko and Civic Watch. Independent, based in Raleigh, North Carolina.">
+  <meta property="og:description" content="The studio behind Mecca Gecko, Civic Watch and Echo Brawlers. Independent, based in Raleigh, North Carolina.">
   <meta property="og:url" content="https://valuxgames.com/">
   <meta property="og:image" content="https://valuxgames.com/assets/og.jpg">
   <meta property="og:image:width" content="1200">
@@ -89,6 +89,19 @@
         "author": { "@id": "https://valuxgames.com/#studio" },
         "publisher": { "@id": "https://valuxgames.com/#studio" },
         "gamePlatform": ["Web Browser", "iOS"]
+      },
+      {
+        "@type": "VideoGame",
+        "name": "Echo Brawlers: Roll & Fight",
+        "alternateName": "ECHO BRAWLERS",
+        "url": "https://www.roblox.com/games/83952850539551/ECHO-BRAWLERS-Roll-Fight",
+        "sameAs": "https://www.roblox.com/games/83952850539551/ECHO-BRAWLERS-Roll-Fight",
+        "image": "https://valuxgames.com/assets/echo/key.webp",
+        "author": { "@id": "https://valuxgames.com/#studio" },
+        "publisher": { "@id": "https://valuxgames.com/#studio" },
+        "gamePlatform": "Roblox",
+        "genre": "Action",
+        "playMode": "MultiPlayer"
       }
     ]
   }
@@ -106,6 +119,9 @@
     <symbol id="i-valux" viewBox="0 0 64 64">
       <path d="M4 10h15l13 30 13-30h15L39 56H25z" fill="url(#vx-grad)"/>
       <path d="M32 12l5 5-5 5-5-5z" fill="#fff"/>
+    </symbol>
+    <symbol id="i-roblox" viewBox="0 0 64 64">
+      <path d="M15 4 4 49l45 11 11-45zM27 26l12 3-3 12-12-3z" fill="currentColor" fill-rule="evenodd"/>
     </symbol>
     <symbol id="i-civic" viewBox="0 0 64 64">
       <circle cx="32" cy="32" r="29.5" fill="#0b141c" stroke="#e2bd6f" stroke-width="3"/>
@@ -147,6 +163,7 @@
       <nav id="site-nav" class="site-nav" aria-label="Primary">
         <a href="#mecca-gecko">Mecca Gecko</a>
         <a href="#civic-watch">Civic Watch</a>
+        <a href="#echo-brawlers">Echo Brawlers</a>
         <a href="#platforms">Platforms</a>
         <a href="#studio">Studio</a>
         <a class="nav-cta" href="https://apps.apple.com/us/app/mecca-gecko/id6801449754"><svg aria-hidden="true"><use href="#i-apple"/></svg>Get Mecca Gecko</a>
@@ -160,10 +177,11 @@
         <p class="hud hero-hud"><span class="dot"></span>Independent game studio <span class="sep">/</span> Raleigh, NC <span class="sep sm-hide">/</span> <span class="sm-hide">Est. 2026</span></p>
         <h1 id="hero-title" class="display hero-title">Small studio.<br><span class="grad-text">Loud games.</span></h1>
         <div class="hero-sub">
-          <p class="lede">Valux Games LLC makes funny, chaotic games for your phone. <strong>Mecca Gecko</strong> is out now on the App Store, <strong>Civic Watch</strong> is in beta, and Android versions of both are on the way.</p>
+          <p class="lede">Valux Games LLC makes funny, chaotic games for your phone and your friends. <strong>Mecca Gecko</strong> is out now on the App Store, <strong>Echo Brawlers</strong> is live on Roblox, <strong>Civic Watch</strong> is in beta, and Android versions are on the way.</p>
           <ul class="platform-chips" aria-label="Platforms">
             <li><svg aria-hidden="true"><use href="#i-apple"/></svg>iPhone</li>
             <li><svg aria-hidden="true"><use href="#i-apple"/></svg>iPad</li>
+            <li><svg aria-hidden="true"><use href="#i-roblox"/></svg>Roblox</li>
             <li><svg aria-hidden="true"><use href="#i-android"/></svg>Android <small>Soon</small></li>
           </ul>
         </div>
@@ -203,6 +221,23 @@
               </div>
             </div>
           </article>
+
+          <article class="pick pick-echo" aria-labelledby="pick-echo-title">
+            <img class="pick-art" src="assets/echo/key.webp" alt="" width="1280" height="720" fetchpriority="high">
+            <span class="pick-corners" aria-hidden="true"></span>
+            <div class="pick-top">
+              <span class="tag tag-live">Live on Roblox</span>
+              <span class="hud">03 / Roll &amp; fight</span>
+            </div>
+            <div class="pick-body">
+              <h3 id="pick-echo-title" class="pick-title display echo-mark"><span class="eb-echo">Echo</span><br><span class="eb-brawl">Brawlers</span></h3>
+              <p class="pick-line">Roll the dice. Send them flying.</p>
+              <div class="pick-actions">
+                <a class="btn btn-echo" href="https://www.roblox.com/games/83952850539551/ECHO-BRAWLERS-Roll-Fight"><svg aria-hidden="true"><use href="#i-roblox"/></svg>Play on Roblox</a>
+                <a class="btn btn-ghost" href="#echo-brawlers">Explore</a>
+              </div>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -213,14 +248,18 @@
           <div class="ticker-group">
             <span>Paint. Hide. Get spotted.</span><b>✦</b>
             <span>Remain calm. Report everything.</span><b>✦</b>
+            <span>Roll the dice. Send them flying.</span><b>✦</b>
             <span>Out now on the App Store</span><b>✦</b>
+            <span>Live on Roblox</span><b>✦</b>
             <span>Android on the way</span><b>✦</b>
             <span>Made in Raleigh</span><b>✦</b>
           </div>
           <div class="ticker-group">
             <span>Paint. Hide. Get spotted.</span><b>✦</b>
             <span>Remain calm. Report everything.</span><b>✦</b>
+            <span>Roll the dice. Send them flying.</span><b>✦</b>
             <span>Out now on the App Store</span><b>✦</b>
+            <span>Live on Roblox</span><b>✦</b>
             <span>Android on the way</span><b>✦</b>
             <span>Made in Raleigh</span><b>✦</b>
           </div>
@@ -584,14 +623,59 @@
       </div>
     </section>
 
+    <section class="game game-echo" id="echo-brawlers" aria-labelledby="echo-title">
+      <div class="wrap game-intro">
+        <div class="game-copy" data-reveal>
+          <div class="game-id">
+            <img class="app-icon" src="assets/echo/icon.webp" width="160" height="160" alt="" loading="lazy">
+            <div>
+              <p class="hud">Game 03</p>
+              <p class="status"><span class="dot dot-echo"></span>Live on Roblox</p>
+            </div>
+          </div>
+          <h2 id="echo-title" class="display echo-title"><span class="eb-echo">Echo</span><br><span class="eb-brawl">Brawlers</span></h2>
+          <p class="display slogan"><span class="c-eb-cyan">Roll.</span> <span class="c-eb-pink">Fight.</span><br><span class="c-eb-orange">Win the pet.</span></p>
+          <p class="game-text">Roll the dice for god-tier auras and bizarre weapons, then drop into the Arena and knock your rivals off the edge. Every round is fought for a prize pet, 23 to collect, and the rarest ones are guarded by the Void Titan. Pets go home to your yard and earn cash every second. New mythic aura every Friday.</p>
+          <dl class="stats">
+            <div><dt>Auras to roll</dt><dd>15</dd></div>
+            <div><dt>Pets to win</dt><dd>23</dd></div>
+            <div><dt>Rarest roll</dt><dd>1 in 10M</dd></div>
+            <div><dt>To play</dt><dd>Free</dd></div>
+          </dl>
+          <div class="store-row">
+            <a class="btn btn-echo" href="https://www.roblox.com/games/83952850539551/ECHO-BRAWLERS-Roll-Fight"><svg aria-hidden="true"><use href="#i-roblox"/></svg>Play on Roblox</a>
+          </div>
+          <ul class="codes" aria-label="Codes you can redeem in the game"><li>RELEASE</li><li>ECHO</li><li>PHONK</li><li>TIKTOK</li><li>FRIDAY</li></ul>
+          <p class="fine">Free to play on Roblox · Optional in-experience purchases, including paid random rolls with every odd shown in-game · Trading follows Roblox policy</p>
+        </div>
+
+        <div class="echo-stage" data-reveal>
+          <figure class="shot shot-wide"><img src="assets/echo/thumb-cosmic.webp" alt="A brawler leaps through a rainbow aura surrounded by planets, next to the words 1 in 10,000,000 Cosmic Mythic" width="1280" height="720" loading="lazy"><figcaption class="art-note">Experience page art</figcaption></figure>
+          <figure class="shot"><img src="assets/echo/thumb-arena.webp" alt="Three brawlers on a glowing arena platform, one swinging a rubber chicken, under the words Send them flying" width="1280" height="720" loading="lazy"></figure>
+          <figure class="shot"><img src="assets/echo/thumb-pets.webp" alt="A yard full of prize pets: cats, a monkey, a yeti, an alligator and a tiger, under the words Win 23 pets" width="1280" height="720" loading="lazy"></figure>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <ul class="echo-loop">
+          <li><p class="hud">01 / Roll</p><strong>A free roll every 60 seconds.</strong><p>Auto Roll keeps the dice moving. 15 rarities from Dirt, 1 in 2, up to Cosmic Mythic, 1 in 10,000,000. Luck potions tilt the odds, and the Odds panel shows every number.</p></li>
+          <li><p class="hud">02 / Fight</p><strong>The Arena portal opens every 3 minutes.</strong><p>Knock rivals off the edge, parry the Echo Ball and double jump to survive. KO effects use your aura&rsquo;s colours.</p></li>
+          <li><p class="hud">03 / Win pets</p><strong>Every round is fought for a prize animal.</strong><p>23 to collect, from the Black Sheep to the Lava Dragon. The super-rare ones mean beating the Void Titan boss first.</p></li>
+          <li><p class="hud">04 / Earn</p><strong>Pets earn cash every second.</strong><p>Carry your prize home to your yard, then spend on shields that block hits until they break.</p></li>
+          <li><p class="hud">05 / Trade &amp; flex</p><strong>Trade with anyone.</strong><p>Show off from the VIP glass balcony in the Hub, and watch the weekly limited aura rotate in every Friday.</p></li>
+          <li><p class="hud">06 / TikTok Cam</p><strong>Cinematic slow-mo of your aura.</strong><p>One tap hides the UI and orbits the camera. Built for clips.</p></li>
+        </ul>
+      </div>
+    </section>
+
     <section class="platforms" id="platforms" aria-labelledby="platforms-title">
       <div class="wrap">
         <div class="section-head split" data-reveal>
           <div>
             <p class="hud">Where to play</p>
-            <h2 id="platforms-title" class="h2">On Apple now.<br><span class="grad-text">Android next.</span></h2>
+            <h2 id="platforms-title" class="h2">On Apple and Roblox now.<br><span class="grad-text">Android next.</span></h2>
           </div>
-          <p class="note">Both games are built for touch first, on iPhone and iPad. Android versions of Mecca Gecko and Civic Watch are in the works.</p>
+          <p class="note">Mecca Gecko and Civic Watch are built for touch first, on iPhone and iPad, with Android versions in the works. Echo Brawlers lives on Roblox, so it plays wherever Roblox does: phone, tablet, PC and console.</p>
         </div>
         <div class="plat-grid">
           <article class="plat-card plat-mecca" data-reveal>
@@ -639,6 +723,26 @@
               </li>
             </ul>
           </article>
+          <article class="plat-card plat-echo" data-reveal>
+            <div class="plat-head">
+              <img src="assets/echo/icon.webp" width="160" height="160" alt="" loading="lazy">
+              <div>
+                <h3>Echo Brawlers</h3>
+                <p>Roll &amp; fight · Free on Roblox</p>
+              </div>
+            </div>
+            <ul class="plat-list">
+              <li>
+                <span class="plat-name"><svg aria-hidden="true"><use href="#i-roblox"/></svg>Roblox</span>
+                <span class="pill pill-live">Out now</span>
+                <a href="https://www.roblox.com/games/83952850539551/ECHO-BRAWLERS-Roll-Fight">Play<svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+              </li>
+              <li>
+                <span class="plat-name"><svg aria-hidden="true"><use href="#i-globe"/></svg>Phone, tablet, PC, console</span>
+                <span class="pill pill-live">Via Roblox</span>
+              </li>
+            </ul>
+          </article>
         </div>
       </div>
     </section>
@@ -652,8 +756,8 @@
           <dl class="facts">
             <div><dt>Company</dt><dd>Valux Games LLC</dd></div>
             <div><dt>Founded</dt><dd>2026, North Carolina</dd></div>
-            <div><dt>Games</dt><dd>Mecca Gecko, Civic Watch</dd></div>
-            <div><dt>Platforms</dt><dd>iPhone, iPad, Android soon</dd></div>
+            <div><dt>Games</dt><dd>Mecca Gecko, Civic Watch, Echo Brawlers</dd></div>
+            <div><dt>Platforms</dt><dd>iPhone, iPad, Roblox, Android soon</dd></div>
           </dl>
         </div>
 
@@ -673,6 +777,7 @@
           <ul class="support-links">
             <li><a href="https://www.meccagecko.com/support.html">Mecca Gecko support</a></li>
             <li><a href="https://civicwatchgame.com/support.html">Civic Watch support</a></li>
+            <li><a href="https://www.roblox.com/games/83952850539551/ECHO-BRAWLERS-Roll-Fight">Echo Brawlers on Roblox</a></li>
           </ul>
         </section>
       </div>
@@ -688,14 +793,15 @@
       <nav class="footer-nav" aria-label="Footer">
         <a href="https://www.meccagecko.com/">meccagecko.com</a>
         <a href="https://civicwatchgame.com/">civicwatchgame.com</a>
+        <a href="https://www.roblox.com/games/83952850539551/ECHO-BRAWLERS-Roll-Fight">Echo Brawlers on Roblox</a>
         <a href="privacy.html">Privacy</a>
         <a href="terms.html">Terms</a>
         <a href="mailto:support@valuxgames.com">support@valuxgames.com</a>
       </nav>
     </div>
     <div class="wrap footer-bottom">
-      <p>© 2026 Valux Games LLC. All rights reserved. Mecca Gecko and Civic Watch are games from Valux Games LLC.</p>
-      <p>Apple, App Store, iPhone, iPad and TestFlight are trademarks of Apple Inc. Google Play and Android are trademarks of Google LLC.</p>
+      <p>© 2026 Valux Games LLC. All rights reserved. Mecca Gecko, Civic Watch and Echo Brawlers are games from Valux Games LLC.</p>
+      <p>Apple, App Store, iPhone, iPad and TestFlight are trademarks of Apple Inc. Google Play and Android are trademarks of Google LLC. Roblox is a trademark of Roblox Corporation.</p>
     </div>
     <p class="footer-giant" aria-hidden="true">Valux Games</p>
   </footer>
