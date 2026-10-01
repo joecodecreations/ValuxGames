@@ -110,10 +110,10 @@ def main():
         errors.append("privacy.html does not describe Google Analytics")
     for url in (
         "https://civicwatchgame.com/",
-        "https://civicwatchgame.com/play/",
+        "https://apps.apple.com/us/app/civic-watch-fps/id6811555006",
         "https://www.meccagecko.com/",
         "https://apps.apple.com/us/app/mecca-gecko/id6801449754",
-        "https://testflight.apple.com/join/Fg7yHPDD",
+        "https://www.roblox.com/games/83952850539551/ECHO-BRAWLERS-Roll-Fight",
     ):
         if url not in index:
             errors.append(f"index missing link {url}")
