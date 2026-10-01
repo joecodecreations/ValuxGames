@@ -4,7 +4,7 @@ Public studio site for **Valux Games LLC**, a game studio in Raleigh, North Caro
 
 The site introduces the studio and links out to the games:
 
-- [Civic Watch](https://civicwatchgame.com/) — in development, with a browser demo and an iPhone and iPad beta
+- [Civic Watch](https://civicwatchgame.com/) — out now on the App Store; larger releases coming
 - [Mecca Gecko](https://www.meccagecko.com/) — out now on the App Store
 - [Echo Brawlers: Roll & Fight](https://www.roblox.com/games/83952850539551/ECHO-BRAWLERS-Roll-Fight) — live on Roblox
 
