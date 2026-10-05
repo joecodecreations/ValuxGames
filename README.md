@@ -80,7 +80,7 @@ Dark studio shell with a violet-to-pink accent, then each game takes over its ow
 
 `js/site.js` handles the mobile menu, the header background on scroll, scroll reveals, the character marquee pause button, the arena Deathmatch/Zombies toggle, and the two muted video loops. Videos play only while on screen and never start on their own when the visitor prefers reduced motion. The site works without JavaScript.
 
-Every page loads Google Analytics 4 (`G-8QK7CXD707`) near the top of `<head>`. `privacy.html` describes what it collects and how to opt out; change both together. `scripts/validate.py` fails if a page is missing the tag.
+Every page loads Google Analytics 4 (`G-DVZCZV1Z40`) near the top of `<head>`. `privacy.html` describes what it collects and how to opt out; change both together. `scripts/validate.py` fails if a page is missing the tag.
 
 ## Assets
 

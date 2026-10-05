@@ -66,7 +66,7 @@ def main():
         parser.feed(html.read_text(encoding="utf-8"))
         if not "".join(parser.title).strip():
             errors.append(f"{html.name}: missing title")
-        if "G-8QK7CXD707" not in html.read_text(encoding="utf-8"):
+        if "G-DVZCZV1Z40" not in html.read_text(encoding="utf-8"):
             errors.append(f"{html.name}: missing Google tag")
         if not parser.has_desc:
             errors.append(f"{html.name}: missing meta description")
