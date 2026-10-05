@@ -16,8 +16,9 @@ Public addresses on the site:
 - `support@valuxgames.com` — privacy, terms, and other legal notes
 - [Facebook](https://www.facebook.com/valuxgames) — Valux Games page
 - [YouTube](https://www.youtube.com/@ValuxGames) — @ValuxGames channel
+- [TikTok](https://www.tiktok.com/@valuxgamesofficial) — @valuxgamesofficial
 
-The homepage contact card and every page footer link to Facebook and YouTube. The homepage Organization schema lists the same two profiles in `sameAs`.
+The homepage contact card and every page footer link to Facebook, YouTube, and TikTok. The homepage Organization schema lists the same profiles in `sameAs`.
 
 ## Preview
 

@@ -76,6 +76,7 @@ def main():
         for url in (
             "https://www.facebook.com/valuxgames",
             "https://www.youtube.com/@ValuxGames",
+            "https://www.tiktok.com/@valuxgamesofficial",
         ):
             if url not in page_text:
                 errors.append(f"{html.name}: missing link {url}")
@@ -123,6 +124,7 @@ def main():
         "https://www.roblox.com/games/83952850539551/ECHO-BRAWLERS-Roll-Fight",
         "https://www.facebook.com/valuxgames",
         "https://www.youtube.com/@ValuxGames",
+        "https://www.tiktok.com/@valuxgamesofficial",
     ):
         if url not in index:
             errors.append(f"index missing link {url}")
