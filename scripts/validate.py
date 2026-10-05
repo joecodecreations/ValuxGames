@@ -72,6 +72,13 @@ def main():
             errors.append(f"{html.name}: missing meta description")
         if parser.missing_alt:
             errors.append(f"{html.name}: {parser.missing_alt} img without alt")
+        page_text = html.read_text(encoding="utf-8")
+        for url in (
+            "https://www.facebook.com/valuxgames",
+            "https://www.youtube.com/@ValuxGames",
+        ):
+            if url not in page_text:
+                errors.append(f"{html.name}: missing link {url}")
         for url in parser.urls:
             rel = local_target(url)
             if rel is None:
@@ -114,6 +121,8 @@ def main():
         "https://www.meccagecko.com/",
         "https://apps.apple.com/us/app/mecca-gecko/id6801449754",
         "https://www.roblox.com/games/83952850539551/ECHO-BRAWLERS-Roll-Fight",
+        "https://www.facebook.com/valuxgames",
+        "https://www.youtube.com/@ValuxGames",
     ):
         if url not in index:
             errors.append(f"index missing link {url}")

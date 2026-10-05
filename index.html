@@ -23,7 +23,7 @@
   <link rel="preload" href="assets/fonts/archivo-var.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/mecca/key.webp" as="image">
   <link rel="preload" href="assets/civic/key.webp" as="image">
-  <link rel="stylesheet" href="css/site.css?v=20260930">
+  <link rel="stylesheet" href="css/site.css?v=20261005">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Valux Games">
   <meta property="og:title" content="Valux Games — Small studio. Loud games.">
@@ -44,6 +44,10 @@
         "alternateName": "Valux Games",
         "url": "https://valuxgames.com/",
         "logo": "https://valuxgames.com/assets/icon-512.png",
+        "sameAs": [
+          "https://www.facebook.com/valuxgames",
+          "https://www.youtube.com/@ValuxGames"
+        ],
         "foundingDate": "2026",
         "telephone": "+1-919-371-8096",
         "email": "support@valuxgames.com",
@@ -147,6 +151,12 @@
     </symbol>
     <symbol id="i-play" viewBox="0 0 24 24">
       <path fill="currentColor" d="M7 4.5v15l12.5-7.5z"/>
+    </symbol>
+    <symbol id="i-facebook" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M14.2 8.4h2.5V5.1h-2.5C11.9 5.1 10.4 6.6 10.4 9v1.7H8v3.2h2.4V21h3.3v-7.1h2.5l.4-3.2h-2.9V9.2c0-.5.3-.8.8-.8z"/>
+    </symbol>
+    <symbol id="i-youtube" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M22.5 7.2a2.9 2.9 0 0 0-2-2C18.7 4.7 12 4.7 12 4.7s-6.7 0-8.5.5a2.9 2.9 0 0 0-2 2C1 9 1 12 1 12s0 3 .5 4.8a2.9 2.9 0 0 0 2 2c1.8.5 8.5.5 8.5.5s6.7 0 8.5-.5a2.9 2.9 0 0 0 2-2c.5-1.8.5-4.8.5-4.8s0-3-.5-4.8zM9.8 15.5V8.5l6.4 3.5-6.4 3.5z"/>
     </symbol>
   </svg>
 
@@ -771,6 +781,11 @@
             Raleigh, NC 27601, United States<br>
             <a href="tel:+19193718096">(919) 371-8096</a>
           </address>
+          <p class="hud follow-label">Follow</p>
+          <nav class="social-links" aria-label="Valux Games on social">
+            <a href="https://www.facebook.com/valuxgames"><svg aria-hidden="true"><use href="#i-facebook"/></svg>Facebook</a>
+            <a href="https://www.youtube.com/@ValuxGames"><svg aria-hidden="true"><use href="#i-youtube"/></svg>YouTube</a>
+          </nav>
           <ul class="support-links">
             <li><a href="https://www.meccagecko.com/support.html">Mecca Gecko support</a></li>
             <li><a href="https://civicwatchgame.com/support.html">Civic Watch support</a></li>
@@ -787,14 +802,20 @@
         <svg class="brand-mark" aria-hidden="true"><use href="#i-valux"/></svg>
         <span class="brand-word">Valux <span>Games</span></span>
       </a>
-      <nav class="footer-nav" aria-label="Footer">
-        <a href="https://www.meccagecko.com/">meccagecko.com</a>
-        <a href="https://civicwatchgame.com/">civicwatchgame.com</a>
-        <a href="https://www.roblox.com/games/83952850539551/ECHO-BRAWLERS-Roll-Fight">Echo Brawlers on Roblox</a>
-        <a href="privacy.html">Privacy</a>
-        <a href="terms.html">Terms</a>
-        <a href="mailto:support@valuxgames.com">support@valuxgames.com</a>
-      </nav>
+      <div class="footer-meta">
+        <nav class="social-links" aria-label="Social">
+          <a href="https://www.facebook.com/valuxgames"><svg aria-hidden="true"><use href="#i-facebook"/></svg>Facebook</a>
+          <a href="https://www.youtube.com/@ValuxGames"><svg aria-hidden="true"><use href="#i-youtube"/></svg>YouTube</a>
+        </nav>
+        <nav class="footer-nav" aria-label="Footer">
+          <a href="https://www.meccagecko.com/">meccagecko.com</a>
+          <a href="https://civicwatchgame.com/">civicwatchgame.com</a>
+          <a href="https://www.roblox.com/games/83952850539551/ECHO-BRAWLERS-Roll-Fight">Echo Brawlers on Roblox</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+          <a href="mailto:support@valuxgames.com">support@valuxgames.com</a>
+        </nav>
+      </div>
     </div>
     <div class="wrap footer-bottom">
       <p>© 2026 Valux Games LLC. All rights reserved. Mecca Gecko, Civic Watch and Echo Brawlers are games from Valux Games LLC.</p>

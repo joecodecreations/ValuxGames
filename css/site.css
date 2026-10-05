@@ -1999,6 +1999,41 @@ a.store-btn:hover {
   text-underline-offset: 4px;
 }
 
+.follow-label {
+  margin-top: 22px;
+}
+
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 16px;
+  border: 1px solid var(--line-2);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.social-links a:hover {
+  border-color: var(--violet-soft);
+  color: var(--violet-soft);
+}
+
+.social-links svg {
+  width: 18px;
+  height: 18px;
+  flex: none;
+}
+
 /* Footer */
 
 .site-footer {
@@ -2012,9 +2047,20 @@ a.store-btn:hover {
 .footer-top {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 18px 32px;
+}
+
+.footer-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.footer-meta .social-links {
+  margin-top: 0;
 }
 
 .footer-nav {
@@ -2309,6 +2355,10 @@ a.store-btn:hover {
     grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
     gap: 72px;
     align-items: start;
+  }
+
+  .footer-meta {
+    align-items: flex-end;
   }
 }
 
